@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn("bg-black text-white", inter.className)}>
+      <body className={cn("bg-[#111827] text-white", inter.className)}>
         <NavBar />
         {children}
       </body>
