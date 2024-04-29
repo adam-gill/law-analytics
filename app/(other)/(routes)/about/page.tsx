@@ -53,27 +53,32 @@ const about: React.FC<aboutProps> = () => {
           <ScrollMenu>
             <TitlePara
               title="Daniel Ha"
-              text="Mentor and Scrum Master"
+              text="Mentor"
               icon={<Swords className="ml-4" size={72} />}
             />
             <TitlePara
               title="Adam Gill"
-              text="Mentor and Scrum Master"
+              text="Fullstack SWE"
               icon={<Swords className="ml-4" size={72} />}
             />
             <TitlePara
-              title="Adam Gill"
-              text="Mentor and Scrum Master"
+              title="Daniel Bird"
+              text="Fullstack SWE"
               icon={<Swords className="ml-4" size={72} />}
             />
             <TitlePara
-              title="Adam Gill"
-              text="Mentor and Scrum Master"
+              title="Wei Cheng"
+              text="Data Analyst"
               icon={<Swords className="ml-4" size={72} />}
             />
             <TitlePara
-              title="Adam Gill"
-              text="Mentor and Scrum Master"
+              title="Sim"
+              text="Data Analyst"
+              icon={<Swords className="ml-4" size={72} />}
+            />
+            <TitlePara
+              title="Sam T."
+              text="Data Engineer/Architect"
               icon={<Swords className="ml-4" size={72} />}
             />
           </ScrollMenu>
