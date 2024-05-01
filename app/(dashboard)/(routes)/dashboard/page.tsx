@@ -19,7 +19,7 @@ const dashboard: React.FC<dashboardProps> = () => {
         <Card className="w-[400px] bg-black pb-6">
           <CardHeader className="flex items-start justify-center">
             <CardTitle className="text-white">Login</CardTitle>
-            <CardDescription>Login to View Your Dashboards</CardDescription>
+            <CardDescription>Login two View Your Dashboards</CardDescription>
           </CardHeader>
           <CardContent className="text-white pb-0">
             <p>Email</p>
