@@ -18,13 +18,13 @@ const NavBar: React.FC<NavBarProps> = () => {
           <li className="flex items-center justify-center">
             <div className="flex flex-row gap-6 items-center justify-center">
               <Link href={"/dashboard"}>
-                <div className="">Sign In</div>
+                <div className="bg-white text-black pt-1 pb-1 pl-4 pr-4 rounded-full">Sign In</div>
               </Link>
               <Link href={"/about"}>
-              <div className="">About</div>
+              <div className="bg-white text-black pt-1 pb-1 pl-4 pr-4 rounded-full">About</div>
                 
               </Link>
-              <div className="bg-black pt-2 pb-2 pr-4 pl-4 rounded-full text-white cursor-not-allowed">
+              <div className="bg-white text-black pt-1 pb-1 pl-4 pr-4 rounded-full">
                 Contact
               </div>
             </div>
