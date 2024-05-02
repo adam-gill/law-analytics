@@ -12,9 +12,9 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
-interface dashboardProps {}
+interface DashboardProps {}
 
-const dashboard: React.FC<dashboardProps> = () => {
+const Dashboard: React.FC<DashboardProps> = () => {
   const [loggedIn, setLoggedIn] = useState(false);
   function login() {
     setLoggedIn(!loggedIn);
@@ -63,4 +63,4 @@ const dashboard: React.FC<dashboardProps> = () => {
   );
 };
 
-export default dashboard;
+export default Dashboard;
