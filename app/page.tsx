@@ -15,7 +15,7 @@ export default function Home() {
           src="/fenix.png"
           alt="daniel"
           width={400}
-          height={400}
+          height={138}
         ></Image>
         <h1 className="text-5xl max-w-[600px] text-center lh mt-4">
           Cutting-Edge Law Firm Embedded Analytics at Your Fingertips.
