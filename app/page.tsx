@@ -1,5 +1,6 @@
 "use client";
 
+import NavBar from "@/components/NavBar";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -9,6 +10,7 @@ export default function Home() {
 
   return (
     <>
+      <NavBar />
       <div className="flex items-center justify-center flex-col">
         <Image
           className="rounded-sm mt-4"

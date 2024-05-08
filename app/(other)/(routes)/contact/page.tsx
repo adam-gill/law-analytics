@@ -1,15 +1,20 @@
 import React from 'react';
+import { getUserSession } from '@/lib/session';
+import { useEffect } from 'react';
 
-interface contactProps {
+interface ContactProps {
     
 }
 
-const contact: React.FC<contactProps> = () => {
+const Contact: React.FC<ContactProps> = async () => {
+    
+    const user = await getUserSession();
+
     return (
         <div>
-            Contact
+            {JSON.stringify(user)}
         </div>
     );
 };
 
-export default contact;
+export default Contact;
