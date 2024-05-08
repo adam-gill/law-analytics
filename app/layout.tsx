@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { UserProvider } from "@auth0/nextjs-auth0/client";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,9 +23,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn("bg-[#111827] text-white", inter.className)}>
-        {children}
-      </body>
+      <UserProvider>
+        <body className={cn("bg-[#111827] text-white", inter.className)}>
+          {children}
+        </body>
+      </UserProvider>
+      {/* getting errors - keep going: https://manage.auth0.com/dashboard/us/dev-flrrksi5yy3p8j14/applications/Nrz2OwNGs657RWtuY4e45kc6hNkxWyWe/quickstart/nextjs  */}
     </html>
   );
 }
