@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import NavBar from "@/components/NavBar";
+import { UserProvider } from "@auth0/nextjs-auth0/client";
+import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,10 +25,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn("bg-[#111827] text-white", inter.className)}>
-        <NavBar />
-        {children}
-      </body>
+      <UserProvider>
+        <body className={cn("bg-[#111827] text-white", inter.className)}>
+          <NavBar />
+          {children}
+        </body>
+      </UserProvider>
     </html>
   );
 }
