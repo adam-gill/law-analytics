@@ -31,7 +31,7 @@ const Dashboard: React.FC<DashboardProps> = () => {
         {user ? (
           <iframe
             className="w-[1000px] h-[800px]"
-            src="https://fenix-ai-partner.domo.com/embed/card/private/qYkzG"
+            src="https://fenix-ai-partner.domo.com/embed/card/private/32r3Q"
           ></iframe>
         ) : (
           <h1 className="text-4xl">
