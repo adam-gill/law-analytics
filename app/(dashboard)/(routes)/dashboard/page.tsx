@@ -7,7 +7,6 @@ import "react-toastify/dist/ReactToastify.css";
 // import { useRouter } from "next/navigation";
 import { getSession } from "@auth0/nextjs-auth0";
 import { useUser } from "@auth0/nextjs-auth0/client";
-import Head from "next/head";
 
 interface DashboardProps {}
 
@@ -31,13 +30,13 @@ const Dashboard: React.FC<DashboardProps> = () => {
         {user ? (
           <iframe
             className="w-[1000px] h-[800px]"
-            src="https://fenix-ai-partner.domo.com/embed/card/private/32r3Q"
+            src="https://fenix-ai-partner.domo.com/embed/card/private/2vBQJ"
           ></iframe>
         ) : (
           <h1 className="text-4xl">
             <span className="text-blue-500 underline cursor-pointer">
               Log in
-            </span>{" "}
+            </span>
             to view dashboards.
           </h1>
         )}
