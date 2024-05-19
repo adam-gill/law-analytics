@@ -32,10 +32,10 @@ const Dashboard: React.FC<DashboardProps> = () => {
       theme: "dark",
     });
 
-  const dashboards: { name: string; index: number; height: number; url: string; }[] = [
-    { name: "Client and Project Data", index: 0, height: 1500, url: "https://fenix-ai-partner.domo.com/embed/pages/private/E9owl" },
-    { name: "Attorney Efficiency", index: 1, height: 1000, url: "https://fenix-ai-partner.domo.com/embed/pages/private/G5q05" },
-    { name: "Attorney Bandwidth/Availability Schedule", index: 2, height: 1500, url: "https://fenix-ai-partner.domo.com/embed/pages/private/JqwBy" },
+  const dashboards: { name: string; index: number; url: string; }[] = [
+    { name: "Client and Project Data", index: 0,  url: "https://fenix-ai-partner.domo.com/embed/pages/private/E9owl" },
+    { name: "Attorney Efficiency", index: 1, url: "https://fenix-ai-partner.domo.com/embed/pages/private/G5q05" },
+    { name: "Attorney Bandwidth/Availability Schedule", index: 2,  url: "https://fenix-ai-partner.domo.com/embed/pages/private/JqwBy" },
   ];
   
 
@@ -44,7 +44,7 @@ const Dashboard: React.FC<DashboardProps> = () => {
 
   return (
     <>
-      <div className="h-full flex items-center justify-center flex-col gap-y-8 content-center">
+      <div className="h-[150vh] flex items-center justify-center flex-col gap-y-8 content-center">
         
         <DropdownMenu open={isOpen} onOpenChange={() => SetIsOpen(!isOpen)}>
           <DropdownMenuTrigger className="flex flex-row bg-white text-black rounded-md p-2 gap-y-4 outline-none"><span className="mr-1">{dashboards[dashboard].name}</span> {isOpen ? <ChevronUp /> : <ChevronDown />} </DropdownMenuTrigger>
@@ -60,7 +60,7 @@ const Dashboard: React.FC<DashboardProps> = () => {
 
         {user ? (
           <iframe
-            className={`w-[1200px] h-[${dashboards[dashboard].height}px]`}
+            className={`w-[1200px] h-full`}
             src={dashboards[dashboard].url}
           ></iframe>
         ) : (
