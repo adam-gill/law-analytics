@@ -29,9 +29,11 @@ const NavBar: React.FC<NavBarProps> = () => {
               <div className="bg-white text-black pt-1 pb-1 pl-4 pr-4 rounded-full">About</div>
                 
               </Link>
+              <Link href={"/contact"}>
               <div className="bg-white text-black pt-1 pb-1 pl-4 pr-4 rounded-full">
                 Contact
               </div>
+              </Link>
               <Link href={"/account"}>
                 <div className="flex bg-white text-black h-[40px] w-[40px] rounded-full text-center items-center justify-center">
                   <UserRound />

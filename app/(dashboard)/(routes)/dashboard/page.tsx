@@ -1,12 +1,20 @@
 "use client";
 
-import React from "react";
-
+import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-// import { useRouter } from "next/navigation";
-import { getSession } from "@auth0/nextjs-auth0";
 import { useUser } from "@auth0/nextjs-auth0/client";
+import { ChevronDown, ChevronUp } from 'lucide-react';
+
+
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 interface DashboardProps {}
 
@@ -24,13 +32,36 @@ const Dashboard: React.FC<DashboardProps> = () => {
       theme: "dark",
     });
 
+  const dashboards: { name: string; index: number; height: number; url: string; }[] = [
+    { name: "Client and Project Data", index: 0, height: 1500, url: "https://fenix-ai-partner.domo.com/embed/pages/private/E9owl" },
+    { name: "Attorney Efficiency", index: 1, height: 1000, url: "https://fenix-ai-partner.domo.com/embed/pages/private/G5q05" },
+    { name: "Attorney Bandwidth/Availability Schedule", index: 2, height: 1500, url: "https://fenix-ai-partner.domo.com/embed/pages/private/JqwBy" },
+  ];
+  
+
+  const [dashboard, SetDashboard] = useState<number>(0);
+  const [isOpen, SetIsOpen] = useState<boolean>(false);
+
   return (
     <>
-      <div className="h-[80vh] flex items-center justify-center flex-col gap-y-8 content-center">
+      <div className="h-full flex items-center justify-center flex-col gap-y-8 content-center">
+        
+        <DropdownMenu open={isOpen} onOpenChange={() => SetIsOpen(!isOpen)}>
+          <DropdownMenuTrigger className="flex flex-row bg-white text-black rounded-md p-2 gap-y-4 outline-none"><span className="mr-1">{dashboards[dashboard].name}</span> {isOpen ? <ChevronUp /> : <ChevronDown />} </DropdownMenuTrigger>
+          <DropdownMenuContent align="center">
+            <DropdownMenuLabel>Your Dashboards:</DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem onClick={() => SetDashboard(0)}>Client and Project Data</DropdownMenuItem>
+            <DropdownMenuItem onClick={() => SetDashboard(1)}>Attorney Efficiency</DropdownMenuItem>
+            <DropdownMenuItem onClick={() => SetDashboard(2)}>Attorney Bandwidth/Availability Schedule</DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+
+
         {user ? (
           <iframe
-            className="w-[1000px] h-[800px]"
-            src="https://fenix-ai-partner.domo.com/embed/card/private/2vBQJ"
+            className={`w-[1200px] h-[${dashboards[dashboard].height}px]`}
+            src={dashboards[dashboard].url}
           ></iframe>
         ) : (
           <h1 className="text-4xl">
