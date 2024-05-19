@@ -18,7 +18,7 @@ const contact: React.FC<contactProps> = () => {
 
     return (
         <div className='content-stretch items-center justify-center flex-col max-w-md m-0 mx-auto flex-wrap grid grid-cols-3 gap-8'>
-            {team.map((person) => (<PersonCard person={person}/>))}
+            {team.map((person) => (<PersonCard key={person.index} person={person}/>))}
         </div>
     );
 };
