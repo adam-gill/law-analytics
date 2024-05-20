@@ -5,6 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useUser } from "@auth0/nextjs-auth0/client";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import DashboardCard from "@/components/DashboardProps";
 
 import {
   DropdownMenu,
@@ -43,7 +44,7 @@ const Dashboard: React.FC<DashboardProps> = () => {
       url: "https://fenix-ai-partner.domo.com/embed/pages/private/G5q05",
     },
     {
-      name: "Attorney Bandwidth/Availability Metrics",
+      name: "Attorney Bandwidth/Availability Schedule & Metrics",
       index: 2,
       url: "https://fenix-ai-partner.domo.com/embed/pages/private/1rALq",
     },
@@ -70,16 +71,13 @@ const Dashboard: React.FC<DashboardProps> = () => {
               Attorney Efficiency
             </DropdownMenuItem>
             <DropdownMenuItem onClick={() => SetDashboard(2)}>
-              Attorney Bandwidth/Availability Metrics
+              Attorney Bandwidth/Availability Schedule & Metrics
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>}
 
         {user ? (
-          <iframe
-            className={`w-[1200px] h-full`}
-            src={dashboards[dashboard].url}
-          ></iframe>
+          <DashboardCard index={dashboards[dashboard].index} url={dashboards[dashboard].url}></DashboardCard>
         ) : (
           <h1 className="text-4xl mt-[200px]">
             <span className="text-blue-500 underline cursor-pointer">
@@ -95,4 +93,3 @@ const Dashboard: React.FC<DashboardProps> = () => {
 
 export default Dashboard;
 
-// TODO : add error handling for login and loading states
