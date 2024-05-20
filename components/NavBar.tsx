@@ -3,13 +3,12 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useUser } from '@auth0/nextjs-auth0/client';
-import { User, UserRound } from 'lucide-react';
+import { useUser } from "@auth0/nextjs-auth0/client";
+import { User, UserRound } from "lucide-react";
 
 interface NavBarProps {}
 
 const NavBar: React.FC<NavBarProps> = () => {
-
   const { user, error, isLoading } = useUser();
 
   return (
@@ -24,15 +23,20 @@ const NavBar: React.FC<NavBarProps> = () => {
           </Link>
           <li className="flex items-center justify-center">
             <div className="flex flex-row gap-6 items-center justify-center">
-              
+              <Link href={"/dashboard"}>
+                <div className="bg-white text-black pt-1 pb-1 pl-4 pr-4 rounded-full">
+                  Dashboards
+                </div>
+              </Link>
               <Link href={"/about"}>
-              <div className="bg-white text-black pt-1 pb-1 pl-4 pr-4 rounded-full">About</div>
-                
+                <div className="bg-white text-black pt-1 pb-1 pl-4 pr-4 rounded-full">
+                  About
+                </div>
               </Link>
               <Link href={"/contact"}>
-              <div className="bg-white text-black pt-1 pb-1 pl-4 pr-4 rounded-full">
-                Contact
-              </div>
+                <div className="bg-white text-black pt-1 pb-1 pl-4 pr-4 rounded-full">
+                  Contact
+                </div>
               </Link>
               <Link href={"/account"}>
                 <div className="flex bg-white text-black h-[40px] w-[40px] rounded-full text-center items-center justify-center">
